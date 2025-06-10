@@ -1,180 +1,125 @@
-﻿//const int sizeA = 5;
-//const int rowsB = 3;
-//const int colsB = 4;
+﻿//Console.Write("Введіть число: ");
+//int n = int.Parse(Console.ReadLine());
 
-//int[] A = new int[sizeA];
-//double[,] B = new double[rowsB, colsB];
+//if (n < 1 || n > 100)
+//    Console.WriteLine("Помилка!");
+//else if (n % 15 == 0)
+//    Console.WriteLine("Fizz Buzz");
+//else if (n % 3 == 0)
+//    Console.WriteLine("Fizz");
+//else if (n % 5 == 0)
+//    Console.WriteLine("Buzz");
+//else
+//    Console.WriteLine(n);
 
-//Random rand = new Random();
-//Console.WriteLine($"Введіть {sizeA} цілих чисел для масиву A:");
-//for (int i = 0; i < sizeA; i++)
+
+
+
+//Console.Write("Введіть число: ");
+//double num = double.Parse(Console.ReadLine());
+
+//Console.Write("Введіть відсоток: ");
+//double percent = double.Parse(Console.ReadLine());
+
+//double result = num * percent / 100;
+
+//Console.WriteLine($"Результат: {result}");
+
+
+
+
+//Console.WriteLine("Введіть чотири цифри:");
+
+//string num1 = Console.ReadLine();
+//string num2 = Console.ReadLine();
+//string numt3 = Console.ReadLine();
+//string num4 = Console.ReadLine();
+
+//string number = num1+num2+numt3+num4;
+
+//Console.WriteLine($"Сформоване число: {number}");
+
+
+
+//Console.Write("Введіть шестизначне число: ");
+//string number = Console.ReadLine();
+
+//if (number.Length != 6)
 //{
-//    A[i] = int.Parse(Console.ReadLine());
+//    Console.WriteLine("Помилка: число має бути шестизначним.");
+//    return;
 //}
 
-//for (int i = 0; i < rowsB; i++)
+//Console.Write("Введіть перший номер розряду для заміни (1-6): ");
+//int pos1 = int.Parse(Console.ReadLine()) - 1;
+
+//Console.Write("Введіть другий номер розряду для заміни (1-6): ");
+//int pos2 = int.Parse(Console.ReadLine()) - 1;
+
+//char[] digits = number.ToCharArray();
+
+//char temp = digits[pos1];
+//digits[pos1] = digits[pos2];
+//digits[pos2] = temp;
+
+//string result = new string(digits);
+
+//Console.WriteLine($"Результат: {result}");
+
+
+//using System.Globalization;
+
+//Console.Write("Введіть дату у форматі dd.MM.yyyy: ");
+//DateTime date = DateTime.ParseExact(Console.ReadLine(), "dd.MM.yyyy", CultureInfo.InvariantCulture);
+
+//string season = "";
+
+//if (date.Month == 12 || date.Month == 1 || date.Month == 2)
+//    season = "Winter";
+//else if (date.Month >= 3 && date.Month <= 5)
+//    season = "Spring";
+//else if (date.Month >= 6 && date.Month <= 8)
+//    season = "Summer";
+//else if (date.Month >= 9 && date.Month <= 11)
+//    season = "Autumn";
+
+//Console.WriteLine($"{season} {date.DayOfWeek}");
+
+
+//Console.Write("Введіть температуру: ");
+//double temp = double.Parse(Console.ReadLine());
+
+//Console.Write("Оберіть одиницю конвертації (1 - F to C, 2 - C to F): ");
+//int choice = int.Parse(Console.ReadLine());
+
+//if (choice == 1)
 //{
-//    for (int j = 0; j < colsB; j++)
-//    {
-//        B[i, j] = rand.NextDouble() * 10;
-//    }
+//    double celsius = (temp - 32) * 5 / 9;
+//    Console.WriteLine($"Температура в Цельсіях: {celsius:F2}");
 //}
-//Console.WriteLine("\nМасив A:");
-//for (int i = 0; i < sizeA; i++)
+//else if (choice == 2)
 //{
-//    Console.Write(A[i] + " ");
+//    double fahrenheit = (temp * 9 / 5) + 32;
+//    Console.WriteLine($"Температура в Фаренгейтах: {fahrenheit:F2}");
 //}
-//Console.WriteLine();
-//Console.WriteLine("\nМасив B:");
-//for (int i = 0; i < rowsB; i++)
+//else
 //{
-//    for (int j = 0; j < colsB; j++)
-//    {
-//        Console.Write($"{B[i, j]:F2}");
-//    }
-//    Console.WriteLine();
-//}
-
-//double max = A[0];
-//double min = A[0];
-//double sum = 0;
-//double product = 1;
-
-//int sumEvenA = 0;
-//for (int i = 0; i < sizeA; i++)
-//{
-//    if (A[i] > max) max = A[i];
-//    if (A[i] < min) min = A[i];
-//    sum += A[i];
-//    product *= A[i];
-//    if (A[i] % 2 == 0)
-//        sumEvenA += A[i];
-//}
-
-//double sumOddColsB = 0;
-//for (int i = 0; i < rowsB; i++)
-//{
-//    for (int j = 0; j < colsB; j++)
-//    {
-//        if (B[i, j] > max) max = B[i, j];
-//        if (B[i, j] < min) min = B[i, j];
-//        sum += B[i, j];
-//        product *= B[i, j];
-//        if (j % 2 == 1)
-//            sumOddColsB += B[i, j];
-//    }
-//}
-
-//Console.WriteLine($"\nЗагальний максимум: {max:F2}");
-//Console.WriteLine($"Загальний мінімум: {min:F2}");
-//Console.WriteLine($"Загальна сума: {sum:F2}");
-//Console.WriteLine($"Загальний добуток: {product:E2}"); 
-//Console.WriteLine($"Сума парних елементів масиву A: {sumEvenA}");
-//Console.WriteLine($"Сума елементів непарних стовпців масиву B: {sumOddColsB:F2}");
-
-//const int size = 5;
-//int[,] arr = new int[size, size];
-//Random rand = new Random();
-
-//for (int i = 0; i < size; i++)
-//    for (int j = 0; j < size; j++)
-//        arr[i, j] = rand.Next(-100, 101);
-
-//Console.WriteLine("Масив 5x5:");
-//for (int i = 0; i < size; i++)
-//{
-//    for (int j = 0; j < size; j++)
-//        Console.Write($"{arr[i, j],5}");
-//    Console.WriteLine();
+//    Console.WriteLine("Помилка: невірний вибір.");
 //}
 
-//int min = arr[0, 0], max = arr[0, 0];
-//int minIndex = 0, maxIndex = 0; 
+Console.Write("Введіть перше число: ");
+int a = int.Parse(Console.ReadLine());
 
-//for (int i = 0; i < size; i++)
-//{
-//    for (int j = 0; j < size; j++)
-//    {
-//        int linearIndex = i * size + j;
-//        if (arr[i, j] < min)
-//        {
-//            min = arr[i, j];
-//            minIndex = linearIndex;
-//        }
-//        if (arr[i, j] > max)
-//        {
-//            max = arr[i, j];
-//            maxIndex = linearIndex;
-//        }
-//    }
-//}
+Console.Write("Введіть друге число: ");
+int b = int.Parse(Console.ReadLine());
 
+int start = Math.Min(a, b);
+int end = Math.Max(a, b);
 
-//int start = Math.Min(minIndex, maxIndex);
-//int end = Math.Max(minIndex, maxIndex);
-//int sumBetween = 0;
+Console.WriteLine($"Парні числа в діапазоні від {start} до {end}:");
 
-//for (int idx = start + 1; idx < end; idx++)
-//{
-//    int row = idx / size;
-//    int col = idx % size;
-//    sumBetween += arr[row, col];
-//}
-
-//Console.WriteLine($"\nМінімальний елемент: {min} (індекс {minIndex})");
-//Console.WriteLine($"Максимальний елемент: {max} (індекс {maxIndex})");
-//Console.WriteLine($"Сума елементів між мінімальним і максимальним: {sumBetween}");
-
-
-
-Console.Write("Введіть рядок: ");
-string text = Console.ReadLine();
-
-Console.Write("Введіть ключ (зсув): ");
-int shift = int.Parse(Console.ReadLine());
-
-char[] result = new char[text.Length];
-
-for (int i = 0; i < text.Length; i++)
+for (int i = start; i <= end; i++)
 {
-    char c = text[i];
-
-    if (char.IsLetter(c))
-    {
-        char offset = char.IsUpper(c) ? 'A' : 'a';
-        int pos = c - offset;
-        int newPos = (pos + shift) % 26;
-        if (newPos < 0)
-            newPos += 26;
-        result[i] = (char)(offset + newPos);
-    }
-    else
-    {
-        result[i] = c; 
-    }
+    if (i % 2 == 0)
+        Console.WriteLine(i);
 }
-
-string unknown = new string(result);
-Console.WriteLine("Зашифрований текст: " + unknown);
-
-for (int i = 0; i < unknown.Length; i++)
-{
-    char c = unknown[i];
-
-    if (char.IsLetter(c))
-    {
-        char offset = char.IsUpper(c) ? 'A' : 'a';
-        int pos = c - offset;
-        int newPos = (pos - shift) % 26;
-        if (newPos < 0)
-            newPos += 26;
-        result[i] = (char)(offset + newPos);
-    }
-    else
-    {
-        result[i] = c;
-    }
-}
-
-string known = new string(result);
-Console.WriteLine("Розшифрований текст: " + known);
